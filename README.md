@@ -1,30 +1,18 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Ecommerce example using Nextjs GraphCms and Stripe
 
 ## Getting Started
 
-First, run the development server:
+Obviously clone the repo and yarn install (or npm if you prefer).
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+Create a Stripe account and define some products with prices - notice the 'API ID' stored against each product price. 
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Create a graphCms account. Define products in the schema to match the query in `services/graphcms/get-all-products.ts`. Create the same products you added to Stripe setting the stripePriceId to the product/price-api-id copied from stripe eg "price_1H5UA8Gr1aMYF0A8n2xKu8wW".
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Copy `.env-example` to `.env.local` and set the values for Stripe and GraphCms
 
-## Learn More
+`npm run dev`
 
-To learn more about Next.js, take a look at the following resources:
+## Useful links
+[GraphQL + Next.js](https://dev.to/graphcms/graphql-next-js-working-with-getstaticprops-getstaticpaths-and-graphql-2kfe)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+[Type-safe Payments with Next.js, TypeScript, and Stripe](https://dev.to/thorwebdev/type-safe-payments-with-next-js-typescript-and-stripe-4jo7)
