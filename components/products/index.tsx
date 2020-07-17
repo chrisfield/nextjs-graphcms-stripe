@@ -32,7 +32,7 @@ export default function ({ products }: ProductProps) {
           <div className="buy-panel">
             <div className="buy-panel-content">
               <Price price={product.price}/>
-              <BuyNowButton stripePriceId={product.stripePriceId}/>
+              <BuyNowButton stripePriceId={product.stripePriceId} soldOut={product.quantityInStock <= 0}/>
             </div>
           </div>
         </li>

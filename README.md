@@ -4,13 +4,13 @@
 
 Obviously clone the repo and yarn install (or npm if you prefer).
 
-Create a Stripe account and define some products with prices - notice the 'API ID' stored against each product price. 
+Create a [Stripe](https://stripe.com/) account and define some products with prices - notice the 'API ID' stored against each product price. 
 
-Create a graphCms account. Define products in the schema to match the query in `services/graphcms/get-all-products.ts`. Create the same products you added to Stripe setting the stripePriceId to the product/price-api-id copied from stripe eg "price_1H5UA8Gr1aMYF0A8n2xKu8wW".
+Create a [https://graphcms.com/](graphCms) account. Define products in the schema to match the query in `services/graphcms/get-all-products.ts`. Create the same products you added to Stripe setting the stripePriceId to the product/price-api-id copied from stripe eg "price_1H5UA8Gr1aMYF0A8n2xKu8wW".
 
 Copy `.env-example` to `.env.local` and set the values for Stripe and GraphCms
 
-`npm run dev`
+`yarn dev` or `npm run dev`
 
 ## Useful links
 [GraphQL + Next.js](https://dev.to/graphcms/graphql-next-js-working-with-getstaticprops-getstaticpaths-and-graphql-2kfe)

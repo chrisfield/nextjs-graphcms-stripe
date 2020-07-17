@@ -13,7 +13,7 @@ type Data = {
 
 export default async (req: NextApiRequest, res: NextApiResponse<Data>) => {
   const {sessionId} = req.query;
-  const session = await stripe.checkout.sessions.retrieve(sessionId as string)
+  const session = await stripe.checkout.sessions.retrieve(sessionId as string);
   const lineItems = await stripe.checkout.sessions.listLineItems(sessionId as string);
   const products = await stripe.products.list();
   
