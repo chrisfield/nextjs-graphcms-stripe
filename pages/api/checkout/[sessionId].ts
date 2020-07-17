@@ -8,14 +8,14 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
 type Data = {
   session: Stripe.Checkout.Session,
   lineItems: any,
-  products: Stripe.ApiList<Stripe.Product>
+  customer: Stripe.Customer
 }
 
 export default async (req: NextApiRequest, res: NextApiResponse<Data>) => {
   const {sessionId} = req.query;
   const session = await stripe.checkout.sessions.retrieve(sessionId as string);
   const lineItems = await stripe.checkout.sessions.listLineItems(sessionId as string);
-  const products = await stripe.products.list();
+  const customer = (await stripe.customers.retrieve(session.customer as string) as Stripe.Customer);
   
-  res.status(200).json({ session, lineItems, products })
+  res.status(200).json({ session, lineItems, customer })
 }
